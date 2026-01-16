@@ -1,0 +1,299 @@
+/* --- 1. AJUSTES GENERALES --- */
+:root {
+    --fesana-blue: #002366;
+    /* Definimos el color una sola vez */
+    --fesana-accent: #f8f9fa;
+    /* Un blanco/gris claro para contrastes */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Un gris muy suave, ideal para descansar la vista */
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* --- 2. NAVBAR (BARRA DE NAVEGACIÓN) --- */
+.bg-fesana {
+    background-color: var(--fesana-blue) !important;
+    /* TRUCO: Borde inferior blanco sólido de 2px para separar del Hero */
+    border-bottom: 2px solid white;
+    /* Sombra más fuerte para que "flote" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.navbar-brand img {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.tracking-wide {
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* --- HERO SECTION MÁS LUMINOSA --- */
+.hero-section {
+    /* Bajamos la opacidad del negro/azul de 0.8 a 0.5 */
+    background: linear-gradient(rgba(0, 35, 102, 0.5), rgba(0, 35, 102, 0.4)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    /* Un poco más alto */
+    position: relative;
+}
+
+/* Color de texto para el menú en fondo blanco */
+.text-fesana {
+    color: #002366 !important;
+    /* Azul marino */
+    transition: color 0.3s;
+}
+
+.text-fesana:hover {
+    color: #0d6efd !important;
+    /* Azul brillante al pasar el mouse */
+}
+
+/* La rayita debajo del título ahora usa el azul correcto */
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--fesana-blue);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* --- 5. BOTONES PERSONALIZADOS --- */
+/* Botón "outline" (borde) con el color de Fesana */
+.btn-outline-fesana {
+    color: var(--fesana-blue);
+    border-color: var(--fesana-blue);
+    font-weight: 600;
+}
+
+.btn-outline-fesana:hover {
+    background-color: var(--fesana-blue);
+    color: white;
+}
+
+/* Un toque extra al botón de contacto del menú */
+.nav-link.btn-primary {
+    background-color: #002366 !important;
+    border: none;
+}
+
+/* --- SOMBRA DEL NAVBAR --- */
+.navbar {
+    /* Sombra difuminada suave hacia abajo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- ESTILO DE LAS CARDS (NOVEDADES) --- */
+.card {
+    border: none;
+    /* Quitamos el borde gris feo */
+    border-radius: 12px;
+    /* Bordes un poco más redondeados */
+    background-color: white;
+    /* Aseguramos que la carta sea blanca */
+    /* Sombra base: suave y difusa */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    /* Para la animación */
+}
+
+/* EFECTO HOVER: Cuando pasas el mouse por encima */
+.card:hover {
+    transform: translateY(-5px);
+    /* La carta sube un poquito */
+    /* La sombra se hace más fuerte, dando efecto de elevación */
+    box-shadow: 0 10px 25px rgba(0, 35, 102, 0.15);
+}
+
+/* --- ESTILOS DEL FOOTER MEJORADOS --- */
+footer {
+    /* Degradado oscuro elegante */
+    background: linear-gradient(135deg, #001540 0%, #000000 100%);
+    border-top: 4px solid var(--fesana-blue);
+}
+
+/* Títulos de secciones en el footer (un celeste muy clarito para resaltar) */
+.text-primary-light {
+    color: #adcceb;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* BOTONES DE REDES SOCIALES */
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo transparente sutil */
+    color: white;
+    border-radius: 50%;
+    /* Círculo perfecto */
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por las redes */
+.social-btn:hover {
+    background-color: #0d6efd;
+    /* Se pone azul brillante */
+    color: white;
+    transform: scale(1.1) rotate(10deg);
+    /* Crece un poquito y gira */
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.6);
+    /* Brillo tipo neón */
+}
+
+/* ENLACES DE TEXTO (Accesos) */
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-link:hover {
+    color: white;
+    padding-right: 5px;
+    /* Pequeño movimiento a la izquierda o derecha */
+}
+
+/* Efecto para el link de la dirección */
+.address-link {
+    transition: color 0.3s ease;
+    /* Aseguramos que no tenga subrayado ni en estado normal */
+    text-decoration: none !important;
+}
+
+.address-link:hover {
+    color: #0d6efd !important;
+    /* Solo cambia de color a azul brillante */
+    text-decoration: none !important;
+    /* FORZAMOS que no aparezca la línea */
+}
+
+/* --- ESTILOS DE CARTAS ESPECIALES --- */
+
+/* Clase utilitaria para efectos hover suaves en todas las cartas */
+.card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Carta Suspendida: Se ve "apagada" */
+.card-suspended {
+    background-color: #f8f9fa;
+    /* Fondo grisáceo */
+    opacity: 0.8;
+}
+
+.card-suspended .card-title {
+    color: #6c757d;
+    /* Título gris */
+}
+
+/* Ajustes para la Lista del Selectivo */
+.list-group-item {
+    border-color: #f0f0f0;
+    /* Bordes muy suaves entre distancias */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* --- MEJORAS DE LAS CARTAS --- */
+
+/* Utilidad para fondo amarillo muy clarito (Bootstrap 5.3 ya lo trae, pero por si acaso) */
+.bg-warning-subtle {
+    background-color: #fff3cd;
+}
+
+.text-warning-emphasis {
+    color: #664d03;
+}
+
+/* --- ESTILO SUSPENDIDO --- */
+/* Borde punteado rojo */
+.border-dashed {
+    border-style: dashed !important;
+}
+
+/* Patrón rayado para la carta suspendida (Efecto de cinta de peligro) */
+.suspended-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Rayas diagonales muy sutiles rojas y blancas */
+    background: repeating-linear-gradient(45deg,
+            rgba(220, 53, 69, 0.03),
+            rgba(220, 53, 69, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 20px);
+    z-index: 0;
+}
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--fesana-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 35, 102, 0.15);
+    /* Sombra azul suave */
+}
+
+/* El header pequeño de la página de contacto */
+header.bg-fesana {
+    background-color: var(--fesana-blue);
+    /* Un patrón sutil de fondo si quieres */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+/* --- ESTILOS CALENDARIO --- */
+
+/* La fila del evento */
+.event-row {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+    /* Para evitar saltos al hacer hover */
+}
+
+.event-row:hover {
+    transform: translateX(5px);
+    /* Se mueve un poquito a la derecha */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    border-color: #dee2e6;
+    /* Aparece un borde sutil */
+}
+
+/* La cajita de la fecha (Date Badge) */
+.date-badge {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Si quieres que se vea como calendario de pared, el borde ayuda */
+}
+
+/* Ajustes responsive para los badges de categorías */
+@media (max-width: 768px) {
+    .w-md-auto {
+        width: auto !important;
+    }
+}
