@@ -104,13 +104,7 @@ h2::after {
     /* Para la animación */
 }
 
-/* EFECTO HOVER: Cuando pasas el mouse por encima */
-.card:hover {
-    transform: translateY(-5px);
-    /* La carta sube un poquito */
-    /* La sombra se hace más fuerte, dando efecto de elevación */
-    box-shadow: 0 10px 25px rgba(0, 35, 102, 0.15);
-}
+
 
 /* --- ESTILOS DEL FOOTER MEJORADOS --- */
 footer {
@@ -295,5 +289,92 @@ header.bg-fesana {
 @media (max-width: 768px) {
     .w-md-auto {
         width: auto !important;
+    }
+}
+
+
+
+
+
+/* --- ESTILOS RANKING --- */
+
+/* Fuente monoespaciada para los números (tiempos) para que se alineen bien */
+.font-monospace {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    color: var(--fesana-blue);
+}
+
+/* Ajustes de la tabla */
+.table th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Efecto hover suave en las filas */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 35, 102, 0.03);
+}
+
+/* Ajuste para el Podio en celulares */
+@media (max-width: 576px) {
+    .scale-up {
+        transform: scale(1) !important; /* Quitar zoom en móvil para que no se salga */
+    }
+}
+
+/* --- AJUSTES RESPONSIVOS DEL PODIO --- */
+
+/* Por defecto (Celulares): Sin transformación y con margen abajo para separar */
+.podium-card {
+    transform: none !important;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+/* SOLO en pantallas medianas y grandes (Tablets/PC > 768px) aplicamos la escalera */
+@media (min-width: 768px) {
+    .podium-container {
+        min-height: 380px; /* Solo damos altura fija en PC */
+    }
+    
+    .podium-card {
+        margin-bottom: 0; /* Sin margen abajo en PC */
+    }
+
+    /* Restauramos las elevaciones solo en PC */
+    .podium-card-1 { transform: translateY(-40px) !important; z-index: 2; }
+    .podium-card-2 { transform: translateY(-15px) !important; z-index: 1; }
+    .podium-card-3 { transform: translateY(0px) !important; z-index: 0; }
+}
+
+/* --- ANIMACIÓN HOVER PODIO --- */
+
+/* 1. Base para la animación suave */
+.podium-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavidad al moverse */
+    cursor: default; /* O pointer si quisieras que sean clicables */
+}
+
+/* 2. Hover Genérico (Para Celulares) */
+.podium-card:hover {
+    transform: translateY(-10px) !important; /* Sube un poquito */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important; /* Sombra más fuerte */
+}
+
+/* 3. Hover Específico para PC (Para no romper la escalera) */
+@media (min-width: 768px) {
+    /* El 1° Puesto ya está en -40px, lo subimos a -50px */
+    .podium-card-1:hover { 
+        transform: translateY(-50px) !important; 
+    }
+    
+    /* El 2° Puesto ya está en -15px, lo subimos a -25px */
+    .podium-card-2:hover { 
+        transform: translateY(-25px) !important; 
+    }
+
+    /* El 3° Puesto está en 0px, lo subimos a -10px */
+    .podium-card-3:hover { 
+        transform: translateY(-10px) !important; 
     }
 }
